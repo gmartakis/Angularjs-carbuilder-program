@@ -219,7 +219,7 @@ app.service("JsonService", function($http, $q) {
                 var str = product.accessory.accessoryname.mainname;
                 if (str.indexOf("Ζάντα") !== -1 || str.indexOf("Ζάντες") !== -1) {
                     total += (product.accessory.accessoryprice.value * 1.24) * 4;
-                    console.log(product.accessory.accessoryname.mainname);
+                   //console.log(product.accessory.accessoryname.mainname);
                 } else {
                     total += product.accessory.accessoryprice.value * 1.24;
                 }
@@ -350,7 +350,7 @@ app.service("JsonService", function($http, $q) {
                         var indexOfGradeArray = $scope.grades.indexOf(findGrade);
                         if (i == indexOfGradeArray) {
                             $scope.mygradesderective.push($scope.config.model.grades[i].grade);
-                            console.log($scope.mygradesderective);
+                           //console.log($scope.mygradesderective);
                             if ($scope.config.model.grades[i].grade.vehicles instanceof Array) {
                                 for (var j = 0; j < $scope.config.model.grades[i].grade.vehicles.length; j++) {
                                     $scope.vehicleFuel.push($scope.config.model.grades[i].grade.vehicles[j].vehicle.fuel['#text']);
@@ -358,14 +358,14 @@ app.service("JsonService", function($http, $q) {
                                     $scope.vehicleName.push($scope.config.model.grades[i].grade.vehicles[j].vehicle.name['#text']);
                                     $scope.vehicleEngine.push($scope.config.model.grades[i].grade.vehicles[j].vehicle.engine['#text'].toString());
                                     $scope.vehicleTrans.push($scope.config.model.grades[i].grade.vehicles[j].vehicle.transmission['#text']);
-                                    console.log("Name " + $scope.vehicleName);
+                                    //console.log("Name " + $scope.vehicleName);
                                     if ($scope.categoryVehicle == 'lcvs') {
                                         $scope.vehicleBodyWork.push($scope.config.model.grades[i].grade.vehicles[j].vehicle.body['#text']);
                                     } else {
                                         $scope.vehicleBodyWork.push($scope.config.model.grades[i].grade.vehicles[j].vehicle.doors['#text']);
                                     }
                                     $scope.thecounter += 1;
-                                }
+                                /}
                                 emptyArrays($scope, $scope.vehicleFuel, $scope.vehiclePrice, $scope.vehicleName, $scope.vehicleEngine, $scope.vehicleTrans, $scope.vehicleBodyWork);
                             }
                         }
