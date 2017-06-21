@@ -1,0 +1,38 @@
+<?php
+$this->headMeta()
+->appendHttpEquiv('X-UA-Compatible', 'IE=edge,chrome=1')
+->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8')
+->appendHttpEquiv('Content-Language', 'el-GR')
+->appendName('robots', 'noydir,noodp,noarchive') //place appropriate value when live
+->appendName('description', $this->meta_description)
+->appendName('keywords', $this->meta_keywords)
+->appendName('viewport', 'width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes');
+
+echo $this -> doctype(); ?>
+
+<html lang="el" class="no-js">
+    <head>
+    	<?php 
+    	echo $this -> headTitle('Nissan - Νικ. Ι. θεοχαράκης');
+		echo $this -> headMeta();
+		echo $this -> headLink();
+		echo $this -> headScript();
+		?>
+    </head>    
+    <body class="cover-page">    	
+    	<?php echo $this->layout()->render('/containers/googleTagManager'); ?>
+    	<header id="nissan-global-header">
+			<?php echo $this -> layout() -> render('/sections/header'); ?>
+		</header>
+        <div role="main" id="main">
+        	<?php echo $this->layout()->content;?>
+        </div>
+        <?php //echo $this->render('partials/index/disclaimerSection.phtml'); ?>
+        <div style="position:relative; bottom:-300px">
+	        <div class="footerPage page">
+	        	<?php echo $this -> layout() -> render('/sections/footer'); ?>
+	        </div>
+        </div>
+        <?php echo $this->layout()->render('/containers/googleConversion'); ?>
+    </body>
+</html>

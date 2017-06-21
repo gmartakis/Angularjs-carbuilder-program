@@ -1,0 +1,40 @@
+<?php
+$this->headMeta()
+->appendHttpEquiv('X-UA-Compatible', 'IE=edge,chrome=1')
+->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8')
+->appendHttpEquiv('Content-Language', 'el-GR')
+->appendName('robots', 'noydir,noodp,noarchive') //place appropriate value when live
+->appendName('description', 'description') //place appropriate value when live
+->appendName('keywords', 'keywords') //place appropriate value when live
+->appendName('viewport', 'width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes');
+$this->headLink()
+->prependStylesheet($this->baseUrl('skin/css/bootstrap.min.css'))
+->appendStylesheet($this->baseUrl('skin/css/app-home.css'));
+$this->headScript()
+->prependFile($this->baseUrl('skin/js/info_new.js'))
+->appendFile($this->baseUrl('skin/js/nissan-navigation-menu.js'));
+?>
+<?php echo $this -> doctype(); ?>
+
+<html lang="el">
+	<head>
+		<?php echo $this -> headTitle('Nissan - Νικ. Ι. θεοχαράκης');
+		echo $this -> headMeta();
+		echo $this -> headLink();
+		echo $this -> headScript();
+		?>
+	</head>
+	<body cz-shortcut-listen="true">
+		<?php //echo $this->layout()->render('/containers/googleTagManager'); //UnComment when LIVE!! ?>
+		<header id="nissan-global-header">
+			<?php echo $this -> layout() -> render('/sections/header'); ?>
+		</header>
+		<div role="main" id="main" data-tracking-zone="Central" class="main-background">
+			<?php echo $this -> layout() -> content; ?>
+		</div>
+		<div class="footerPage page">
+			<?php echo $this -> layout() -> render('/sections/footer'); ?>
+		</div>
+		<?php //echo $this->layout()->render('/containers/googleConversion'); //UnComment when LIVE!! ?>
+	</body>
+</html>

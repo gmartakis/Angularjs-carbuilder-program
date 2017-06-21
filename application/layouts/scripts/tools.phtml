@@ -1,0 +1,23 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="el" class="no-js">
+	<head>
+		<?php 
+    	echo $this -> headTitle('Nissan - Νικ. Ι. θεοχαράκης');
+		echo $this -> headMeta();
+		echo $this -> headLink();
+		echo $this -> headScript();
+		?> 
+	</head>
+	<body>
+		<?php echo $this->layout()->render('/containers/googleTagManager'); ?>
+		<header>
+			<?php echo $this -> layout() -> render('/sections/header'); ?>
+		</header>
+		<?php echo $this->layout()->content;?>
+		<div class="footerPage page">
+			<?php echo $this -> layout() -> render('/sections/footer'); ?>
+		</div>
+		<?php echo $this->layout()->render('/containers/googleConversion'); ?>
+	</body>
+</html>
